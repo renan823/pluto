@@ -1,12 +1,12 @@
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
 
 #include "errors.h"
 
 /*
-*/
+ */
 struct error {
     char *message;
     int code;
@@ -18,17 +18,17 @@ Create the base error struct, allocating memory for it.
 Used as base error generator.
 */
 Error *NewError(const char *message, int code, bool fatal) {
-    Error *error = (Error*) malloc(sizeof(Error));
+    Error *error = (Error *)malloc(sizeof(Error));
 
     if (error != NULL) {
         error->fatal = fatal;
         error->code = code;
 
-        error->message = (char*) malloc(strlen(message) + 1);
+        error->message = (char *)malloc(strlen(message) + 1);
         if (error->message != NULL) {
             strcpy(error->message, message);
         }
-    }  
+    }
 
     return error;
 }
@@ -49,7 +49,7 @@ void FreeError(Error *error) {
 }
 
 /*
-*/
+ */
 char *GetErrorMessage(Error *error) {
     if (error == NULL) {
         return "";

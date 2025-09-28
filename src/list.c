@@ -1,10 +1,11 @@
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 
 #include "list.h"
 
 /*
+List node
 */
 typedef struct node Node;
 struct node {
@@ -14,6 +15,7 @@ struct node {
 };
 
 /*
+List struct
 */
 struct list {
     Node *head;
@@ -22,7 +24,7 @@ struct list {
 };
 
 /*
-*/
+ */
 void Swap(void *pa, void *pb) {
     void *aux = pa;
 
@@ -31,9 +33,9 @@ void Swap(void *pa, void *pb) {
 }
 
 /*
-*/
+ */
 Node *NewNode(void *value) {
-    Node *node = (Node*) malloc(sizeof(Node));
+    Node *node = (Node *)malloc(sizeof(Node));
     if (node == NULL) {
         return NULL;
     }
@@ -44,9 +46,9 @@ Node *NewNode(void *value) {
 }
 
 /*
-*/
+ */
 List *NewList() {
-    List *list = (List*) malloc(sizeof(List));
+    List *list = (List *)malloc(sizeof(List));
     if (list == NULL) {
         return NULL;
     }
@@ -59,7 +61,7 @@ List *NewList() {
 }
 
 /*
-*/
+ */
 void FreeList(List **list) {
     if ((*list) == NULL) {
         return;
@@ -73,7 +75,7 @@ void FreeList(List **list) {
 }
 
 /*
-*/
+ */
 void ListPushBack(List *list, void *item) {
     if (list == NULL) {
         return;
@@ -102,7 +104,7 @@ void ListPushBack(List *list, void *item) {
 }
 
 /*
-*/
+ */
 void ListPushFront(List *list, void *item) {
     if (list == NULL) {
         return;
@@ -131,7 +133,7 @@ void ListPushFront(List *list, void *item) {
 }
 
 /*
-*/
+ */
 void *ListPopBack(List *list) {
     if (list == NULL || list->size == 0) {
         return NULL;
@@ -162,7 +164,7 @@ void *ListPopBack(List *list) {
 }
 
 /*
-*/
+ */
 void *ListPopFront(List *list) {
     if (list == NULL || list->size == 0) {
         return NULL;
@@ -172,7 +174,7 @@ void *ListPopFront(List *list) {
 }
 
 /*
-*/
+ */
 void ListSort(List *list, Sorter *sorter) {
     if (list == NULL) {
         return;
@@ -223,7 +225,5 @@ void ListForEach(List *list, Iterator *iterator) {
 }
 
 /*
-*/
-int ListSize(List *list) {
-    return list == NULL ? 0 : list->size;
-}
+ */
+int ListSize(List *list) { return list == NULL ? 0 : list->size; }

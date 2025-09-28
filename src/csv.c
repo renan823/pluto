@@ -1,7 +1,7 @@
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
 
 #include "csv.h"
 
@@ -13,7 +13,7 @@ struct csv_reader {
 
 /**/
 CSVReader *OpenCSV(const char *filename) {
-    CSVReader *reader = (CSVReader*) malloc(sizeof(CSVReader));
+    CSVReader *reader = (CSVReader *)malloc(sizeof(CSVReader));
     if (reader == NULL) {
         return NULL;
     }
@@ -42,11 +42,7 @@ void CloseCSV(CSVReader **reader) {
 }
 
 /**/
-bool CSVNextLine(CSVReader *reader) {
-    return false;
-}
+bool CSVNextLine(CSVReader *reader) { return false; }
 
 /**/
-char *CSVReadLine(CSVReader *reader) {
-    return NULL;
-}
+char *CSVReadLine(CSVReader *reader) { return NULL; }

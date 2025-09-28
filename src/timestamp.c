@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include <stdio.h>
 #include <sys/time.h>
 
@@ -16,6 +17,4 @@ Timestamp CurrentTimestamp(void) {
 /*
 Parses the given string date into a valid timestamp.
 */
-Timestamp ParseTimestamp(char *timestamp) {
-    return -1;
-}
+Timestamp ParseTimestamp(char *timestamp) { return -1; }

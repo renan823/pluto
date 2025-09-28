@@ -1,16 +1,15 @@
-#include <stdio.h>
-#include <ctype.h>
 #include <float.h>
-#include <stdlib.h>
-#include <stdint.h>
-#include <strings.h>
 #include <stdbool.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <strings.h>
 
 #include "types.h"
 
-Types InferType(char *value) {
-    return T_INT;
-}
+/*
+Infer the type of the given value.
+*/
+Types InferType(char *value) { return T_INT; }
 
 /*
 Parses the given text into int8.
@@ -30,7 +29,7 @@ int8_t ParseInt(char *value) {
         return INT8_MAX;
     }
 
-    return (int8_t) parsed;
+    return (int8_t)parsed;
 }
 
 /*

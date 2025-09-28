@@ -1,11 +1,10 @@
 #include <stdbool.h>
-#include <stdio.h>
 #include <stdlib.h>
 
 #include "list.h"
 
 /*
-List node
+Defines the List Node struct.
 */
 typedef struct node Node;
 struct node {
@@ -15,7 +14,7 @@ struct node {
 };
 
 /*
-List struct
+Defines the List struct.
 */
 struct list {
     Node *head;
@@ -24,7 +23,8 @@ struct list {
 };
 
 /*
- */
+Swap two pointers.
+*/
 void Swap(void *pa, void *pb) {
     void *aux = pa;
 
@@ -33,7 +33,8 @@ void Swap(void *pa, void *pb) {
 }
 
 /*
- */
+Allocates a new node with the given value.
+*/
 Node *NewNode(void *value) {
     Node *node = (Node *)malloc(sizeof(Node));
     if (node == NULL) {
@@ -46,7 +47,8 @@ Node *NewNode(void *value) {
 }
 
 /*
- */
+Allocates a new empty list.
+*/
 List *NewList() {
     List *list = (List *)malloc(sizeof(List));
     if (list == NULL) {
@@ -61,7 +63,9 @@ List *NewList() {
 }
 
 /*
- */
+Deallocates the given list.
+Also deallocates each value.
+*/
 void FreeList(List **list) {
     if ((*list) == NULL) {
         return;
@@ -75,7 +79,8 @@ void FreeList(List **list) {
 }
 
 /*
- */
+Appends a new the element to the end of the list.
+*/
 void ListPushBack(List *list, void *item) {
     if (list == NULL) {
         return;
@@ -104,7 +109,8 @@ void ListPushBack(List *list, void *item) {
 }
 
 /*
- */
+Appends a new element to the beginning of the list.
+*/
 void ListPushFront(List *list, void *item) {
     if (list == NULL) {
         return;
@@ -133,7 +139,8 @@ void ListPushFront(List *list, void *item) {
 }
 
 /*
- */
+Removes the last element in the list.
+*/
 void *ListPopBack(List *list) {
     if (list == NULL || list->size == 0) {
         return NULL;
@@ -164,34 +171,35 @@ void *ListPopBack(List *list) {
 }
 
 /*
- */
+Removes the first element int the list.
+*/
 void *ListPopFront(List *list) {
     if (list == NULL || list->size == 0) {
         return NULL;
     }
+    
+    // Not implemented
 
     return NULL;
 }
 
 /*
- */
+Uses bubble sort and the given sort condition
+to sort the list.
+*/
 void ListSort(List *list, Sorter *sorter) {
     if (list == NULL) {
         return;
     }
-
-    Node *curr = list->head;
-
-    while (curr->next != NULL) {
-        if (sorter(curr->value, curr->next->value)) {
-            Swap(curr->value, curr->next->value);
-        }
-
-        curr = curr->next;
-    }
+    
+    // Not implemented
 }
 
-/**/
+/*
+Runs over the entire list and try to find
+the element that satisfies the given contidion.
+If no element matches, NULL is returned.
+*/
 void *ListFind(List *list, Finder *finder) {
     if (list == NULL) {
         return NULL;
@@ -210,6 +218,10 @@ void *ListFind(List *list, Finder *finder) {
     return NULL;
 }
 
+/*
+Runs over the entire list applying the given
+Iterator function.
+*/
 void ListForEach(List *list, Iterator *iterator) {
     if (list == NULL) {
         return;
@@ -225,5 +237,7 @@ void ListForEach(List *list, Iterator *iterator) {
 }
 
 /*
- */
+Returns the current list size.
+Returns 0 if the list is NULL.
+*/
 int ListSize(List *list) { return list == NULL ? 0 : list->size; }

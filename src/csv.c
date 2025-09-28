@@ -5,13 +5,18 @@
 
 #include "csv.h"
 
-/**/
+/*
+Defines the Reader struct for csv files.
+*/
 struct csv_reader {
     FILE *file;
     int cols;
 };
 
-/**/
+/*
+Opens a csv file for read.
+Points the new reader to the file start.
+*/
 CSVReader *OpenCSV(const char *filename) {
     CSVReader *reader = (CSVReader *)malloc(sizeof(CSVReader));
     if (reader == NULL) {
@@ -29,7 +34,9 @@ CSVReader *OpenCSV(const char *filename) {
     return reader;
 }
 
-/**/
+/*
+Deallocates the reader and close the csv file.
+*/
 void CloseCSV(CSVReader **reader) {
     if (*reader == NULL) {
         return;
@@ -41,8 +48,20 @@ void CloseCSV(CSVReader **reader) {
     *reader = NULL;
 }
 
-/**/
-bool CSVNextLine(CSVReader *reader) { return false; }
+/*
+Verifies if the current file has a next line.
+*/
+bool CSVNextLine(CSVReader *reader) {
+	// Not implemented
+	
+	return false;
+}
 
-/**/
-char *CSVReadLine(CSVReader *reader) { return NULL; }
+/*
+Reads the next line of the current file.
+*/
+char *CSVReadLine(CSVReader *reader) {
+	// Not implemented
+	
+	return NULL;
+}

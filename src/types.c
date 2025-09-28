@@ -9,7 +9,11 @@
 /*
 Infer the type of the given value.
 */
-Types InferType(char *value) { return T_INT; }
+Types InferType(char *value) {
+	// Not implemented
+	
+	return T_INT;
+}
 
 /*
 Parses the given text into int8.

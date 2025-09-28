@@ -6,7 +6,8 @@
 #include "errors.h"
 
 /*
- */
+Defines the Error struct.
+*/
 struct error {
     char *message;
     int code;
@@ -49,7 +50,8 @@ void FreeError(Error *error) {
 }
 
 /*
- */
+Returns the given error message string.
+*/
 char *GetErrorMessage(Error *error) {
     if (error == NULL) {
         return "";

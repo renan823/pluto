@@ -9,7 +9,7 @@ enum types { T_INT, T_DOUBLE, T_BOOL, T_TIMESTAMP, T_TEXT };
 
 Types InferType(char *value);
 
-int8_t ParseInt(char *value);
+int64_t ParseInt(char *value);
 bool ParseBool(char *value);
 double ParseDouble(char *value);
 

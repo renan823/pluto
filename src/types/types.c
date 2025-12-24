@@ -16,24 +16,24 @@ Types InferType(char *value) {
 }
 
 /* 
- * Parses the given text into int8.
- * Returns the maximum positive int8 value
+ * Parses the given text into int64.
+ * Returns the maximum positive int64 value
  * if the parse fails.
  */
-int8_t ParseInt(char *value) {
+int64_t ParseInt(char *value) {
     char *endptr;
 
     long parsed = strtol(value, &endptr, 10);
 
     if (*endptr != '\0') {
-        return INT8_MAX;
+        return INT64_MAX;
     }
 
-    if (parsed < INT8_MIN || INT8_MAX > parsed) {
-        return INT8_MAX;
+    if (parsed < INT64_MIN || INT64_MAX > parsed) {
+        return INT64_MAX;
     }
 
-    return (int8_t)parsed;
+    return (int64_t)parsed;
 }
 
 /*
